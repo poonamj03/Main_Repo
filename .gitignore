@@ -1,0 +1,7 @@
+*.log
+*.bak
+*.sik
+.vscode*
+**/Public/_Output/*
+checks.json
+**/__pycache__/*

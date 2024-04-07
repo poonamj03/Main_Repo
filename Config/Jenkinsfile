@@ -1,0 +1,21 @@
+timestamps {
+    node ('master') {
+        stage ('Checkout') {
+            ws("D:\\StgADASData\\SUB_REPO") {
+               }
+            }
+    }  //node master
+    node ('master') {
+        ws ("D:\\StgADASData\\SUB_REPO\\SUB_REPOTool_VS2019") {   
+                stage ('Build DBG') {
+                }
+                stage ('Build REL') {
+                }
+                stage ('ZIP') {
+                }
+            }
+        }
+        
+        stage ('Publish result') {
+        }
+}
