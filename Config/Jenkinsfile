@@ -17,7 +17,7 @@ pipeline {
                 bat """
                 echo cd
                 cd BuildTools
-                C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\MSBuild.exe /t:Build /p:Configuration=Debug
+                C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe /t:Build /p:Configuration=Debug
                 """
             }
         }
