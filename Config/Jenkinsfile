@@ -1,12 +1,12 @@
 timestamps {
-    node ('master') {
+agent any    
         stage ('Checkout') {
             ws("D:\\StgData\\SUB_REPO") {
                 checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[url: 'https://github.com/poonamj03/Main_Repo.git']]])
 
                }
             }
-    }  //node master
+
     node ('master') {
         ws ("D:\\StgData\\SUB_REPO\\SUB_REPOTool_VS2019") {   
                 stage ('Build DBG') {
