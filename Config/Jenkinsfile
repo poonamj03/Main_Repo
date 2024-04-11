@@ -3,13 +3,13 @@ pipeline {
     stages {
     stage('Fetch MSBuild') {
             steps {
-                // Checkout your repository
-                git 'https://github.com/poonamj03/Main_Repo.git'
+    // Download the Visual Studio Build Tools executable
+                bat 'curl -o vs_BuildTools.exe -L https://aka.ms/vs/17/release/vs_BuildTools.exe'
                 
-                // Download and extract MSBuild tools
-                bat 'curl -L -o msbuild.zip https://example.com/msbuild.zip'
-                bat 'Expand-Archive -Path msbuild.zip -DestinationPath msbuild'
-            }
+                // Install the Visual Studio Build Tools silently
+                bat 'vs_BuildTools.exe --quiet --wait --norestart --installPath "C:\\Program Files\\Jenkins\\BuildTools"'
+          
+               }
         }
         stage('Build') {
             steps {
