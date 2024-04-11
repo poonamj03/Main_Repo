@@ -1,32 +1,20 @@
-timestamps {
-agent any    
-        stage ('Checkout') {
-            ws("D:\\StgData\\SUB_REPO") {
-                checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[url: 'https://github.com/poonamj03/Main_Repo.git']]])
-
-               }
-            }
-
-    node ('master') {
-        ws ("D:\\StgData\\SUB_REPO\\SUB_REPOTool_VS2019") {   
-                stage ('Build DBG') {
-                                    bat 'msbuild /t:Build /p:Configuration=Debug'
-
-                }
-
-                stage ('Build REL') {
-                                        bat 'msbuild /t:Build /p:Configuration=Release'
-
-                }
-                stage ('ZIP') {
-                                        bat 'powershell Compress-Archive -Path * -DestinationPath output.zip'
-
-                }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                //
             }
         }
-        
-        stage ('Publish result') {
-                    publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'D:\\StgData\\SUB_REPO\\SUB_REPOTool_VS2019', reportFiles: 'index.html', reportName: 'Build Report', reportTitles: ''])
-
+        stage('Test') {
+            steps {
+                //
+            }
         }
+        stage('Deploy') {
+            steps {
+                //
+            }
+        }
+    }
 }
