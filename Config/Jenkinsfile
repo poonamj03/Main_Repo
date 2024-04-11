@@ -1,7 +1,16 @@
 pipeline {
     agent any
     stages {
-
+    stage('Fetch MSBuild') {
+            steps {
+                // Checkout your repository
+                git 'https://github.com/poonamj03/Main_Repo.git'
+                
+                // Download and extract MSBuild tools
+                bat 'curl -L -o msbuild.zip https://example.com/msbuild.zip'
+                bat 'Expand-Archive -Path msbuild.zip -DestinationPath msbuild'
+            }
+        }
         stage('Build') {
             steps {
                 echo "Build"
