@@ -15,9 +15,9 @@ pipeline {
             steps {
                 echo "Build"
                 bat """
-                echo cd
-                cd BuildTools
-                C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe /t:Build /p:Configuration=Debug
+                echo Current Path: %CD%
+                //C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\
+                MSBuild.exe /t:Build /p:Configuration=Debug
                 """
             }
         }
