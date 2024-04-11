@@ -1,11 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ("Clone"){
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: 'master']], userRemoteConfigs: [[url: 'https://github.com/poonamj03/Main_Repo.git']]])
-            }
-        }
+
         stage('Build') {
             steps {
                 echo "Build"
