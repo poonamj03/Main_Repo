@@ -3,7 +3,7 @@ pipeline {
     stages {
     stage('Fetch MSBuild') {
             steps {
-    echo "Download the Visual Studio Build Tools executable"
+                 echo "Download the Visual Studio Build Tools executable"
                // bat 'curl -o vs_BuildTools.exe -L https://aka.ms/vs/17/release/vs_BuildTools.exe'
                 
                 // Install the Visual Studio Build Tools silently
@@ -14,9 +14,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Build"
+                dir("C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\")
                 bat """
-                echo Current Path: %CD%
-                //C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\
+                %CD%
+                C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\
                 MSBuild.exe /t:Build /p:Configuration=Debug
                 """
             }
