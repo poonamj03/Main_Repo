@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building..."
-                dir("C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\"){
+                dir("C:\\Program Files\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\"){
                 bat """
                 MSBuild.exe /t:Build /p:Configuration=Debug
                 """
