@@ -1,0 +1,12 @@
+[submodule "subProject_Repo"]
+   path = subProject_Repo
+   url =../subProject_Repo
+   branch = master
+[submodule "msbuild_repo"]
+   path = msbuild_repo
+   url =../msbuild_repo
+   branch = master
+[submodule "wxWidget_repo"]
+   path = wxWidget_repo
+   url =../wxWidget_repo
+   branch = master
