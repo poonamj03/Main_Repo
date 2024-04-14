@@ -14,12 +14,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Build"
-                dir("C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\")
+                dir("C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\"){
                 bat """
                 %CD%
                 C:\\Program File\\Jenkins\\BuildTools\\MSBuild\\Current\\Bin\\
                 MSBuild.exe /t:Build /p:Configuration=Debug
                 """
+                }
             }
         }
         stage('Test') {
