@@ -3,3 +3,6 @@
    url =../subProject_Repo
    branch = master
 
+[submodule "msbuild_repo"]
+	path = msbuild_repo
+	url = https://github.com/poonamj03/msbuild_repo.git
